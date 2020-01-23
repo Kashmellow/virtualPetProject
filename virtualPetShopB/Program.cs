@@ -20,6 +20,7 @@ namespace virtualPetShopB
             else
             {
                 string cat_activity = "0";
+                //create descriptive name (usingProgram)
                 
                     
 
@@ -40,16 +41,18 @@ namespace virtualPetShopB
                 do
                 {
                     cat.Create_Cat(firstCatName, firstCatColor, firstCatAge, firstCatLives);
-
+                    //remove underscore
                     Console.WriteLine("Main_Menu \n");
                     Console.WriteLine("Press ( 1 ) if you like to play with " + cat.Name);
                     Console.WriteLine("Press ( 2 ) if you like to Feed " + cat.Name);
                     Console.WriteLine("Press ( 3 ) if you like to go to the Dr ");
                     Console.WriteLine("Press ( 4 ) if you like to check the Status ");
                     Console.WriteLine("Press ( 5 ) if you like to Exit ");
+                    //add option to add another cat 
                     cat_activity = Console.ReadLine();
                     cat.Main_Menu(cat_activity);
                 } while (cat_activity != "5");
+                //remove underscore, make camel case (usingProgram)
 
             }
 
