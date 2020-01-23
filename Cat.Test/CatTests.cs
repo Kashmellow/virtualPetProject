@@ -24,7 +24,7 @@ namespace virtualPetShopB
              */
 
             //Act
-            mycat.Feed_Cat();
+            mycat.FeedCat();
 
             /*Note (3) i called the method (Feed_Cat())
              and the body for this method
@@ -66,7 +66,7 @@ namespace virtualPetShopB
              */
 
             //Act
-           mycat.Play_With_Cat();
+           mycat.PlayWithCat();
 
             /*Note (3) i called the method (Play_With_Cat())
              and the body for this method

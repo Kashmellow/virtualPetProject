@@ -23,44 +23,61 @@ namespace virtualPetShopB
         }
 
 
-        public void Create_Cat(string name, string furcolor, int age, int lives)
+        public void CreateCat()
         {
-            Name = name;
-            FurColor = furcolor;
-            Age = age;
-            Lives = lives;
+            Console.WriteLine("What will you name your new cat?");
+            string newCatName = Console.ReadLine();
+
+            Console.WriteLine("What color will your cat be?");
+            string newCatColor = Console.ReadLine();
+
+            Console.WriteLine("How many years old is the cat?");
+            Console.WriteLine("The age between 1 to 9 ");
+            int newCatAge = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Cats can have nine lives, how many will yours have?");
+            int newCatLives = Convert.ToInt32(Console.ReadLine());
+
+            Name = newCatName;
+            FurColor = newCatColor;
+            Age = newCatAge;
+            Lives = newCatLives;
 
         }
-        public void Exit_program()
+        public void ExitProgram()
         {
             Console.WriteLine("Come back later if you change your mind. Bye!");
             Environment.Exit(0);
         }
 
-        public void Main_Menu(string user_selection)
+        public void MainMenu(string user_selection)
         {
 
 
             switch (user_selection)
             {
                 case "1":
-                    Play_With_Cat();
+                    CreateCat();
                     break;
 
                 case "2":
-                    Feed_Cat();
+                    PlayWithCat();
                     break;
 
                 case "3":
-                    Go_To_Dr();
+                    FeedCat();
                     break;
 
                 case "4":
-                    Check_Status();
+                    GoToDr();
                     break;
 
                 case "5":
-                    Exit_program();
+                    CheckStatus();
+                    break;
+
+                case "6":
+                    ExitProgram();
                     break;
 
                 default:
@@ -68,33 +85,33 @@ namespace virtualPetShopB
             }
 
         }
-        public void Play_With_Cat()
+        public void PlayWithCat()
         {
             Health += 2;
             Hunger += 3;
             Boredom -= 3;
 
-            Check_Levels_Number();
+            CheckLevelsNumber();
         }
 
-        public void Go_To_Dr()
+        public void GoToDr()
         {
             Health += 4;
             Boredom += 2;
 
-            Check_Levels_Number();
+            CheckLevelsNumber();
         }
-        public void Feed_Cat()
+        public void FeedCat()
         {
             Health += 1;
             Hunger -=4;
             Boredom -= 2;
 
-            Check_Levels_Number();
+            CheckLevelsNumber();
 
 
         }
-        public void Check_Levels_Number()
+        public void CheckLevelsNumber()
         {
             if (Health > 9) Health = 9;
             if (Health < 1) Health = 1;
@@ -107,10 +124,10 @@ namespace virtualPetShopB
         }
         
 
-        public void Check_Status()
+        public void CheckStatus()
         {
 
-            Check_Levels_Number();
+            CheckLevelsNumber();
 
             Console.WriteLine("The Status levels between [1 to 9]");
            
