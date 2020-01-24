@@ -22,27 +22,56 @@ namespace virtualPetShopB
             Health = 1;
         }
 
+        List<Cat> myCats = new List<Cat>();
 
         public void CreateCat()
         {
+
+            myCats.Add(new Cat());
+
             Console.WriteLine("What will you name your new cat?");
             string newCatName = Console.ReadLine();
 
+            int count = myCats.Count - 1;
+
+            myCats[count].Name = newCatName;
+       
+
             Console.WriteLine("What color will your cat be?");
             string newCatColor = Console.ReadLine();
+
+            myCats[count].FurColor = newCatColor;
 
             Console.WriteLine("How many years old is the cat?");
             Console.WriteLine("The age between 1 to 9 ");
             int newCatAge = Convert.ToInt32(Console.ReadLine());
 
+            myCats[count].Age = newCatAge;
+
             Console.WriteLine("Cats can have nine lives, how many will yours have?");
             int newCatLives = Convert.ToInt32(Console.ReadLine());
 
-            Name = newCatName;
-            FurColor = newCatColor;
-            Age = newCatAge;
-            Lives = newCatLives;
+            myCats[count].Lives = newCatLives;
 
+            myCats[count].Hunger = 2;
+            myCats[count].Boredom = 9;
+            myCats[count].Health = 1;
+
+            //Name = newCatName;
+            //FurColor = newCatColor;
+            //Age = newCatAge;
+            //Lives = newCatLives;
+
+
+
+        }
+
+        public void PrintValue()
+        {
+            foreach (Cat cat in myCats)
+            {
+                Console.WriteLine(cat.Name + " " + cat.FurColor + " " + cat.Hunger);
+            }
         }
         public void ExitProgram()
         {
@@ -87,9 +116,9 @@ namespace virtualPetShopB
         }
         public void PlayWithCat()
         {
-            Health += 2;
-            Hunger += 3;
-            Boredom -= 3;
+            myCats[myCats.Count-1].Health += 2;
+            myCats[myCats.Count-1].Hunger += 3;
+            myCats[myCats.Count-1].Boredom -= 3;
 
             CheckLevelsNumber();
         }
@@ -103,9 +132,9 @@ namespace virtualPetShopB
         }
         public void FeedCat()
         {
-            Health += 1;
-            Hunger -=4;
-            Boredom -= 2;
+            myCats[myCats.Count-1].Health += 1;
+            myCats[myCats.Count-1].Hunger -=4;
+            myCats[myCats.Count-1].Boredom -= 2;
 
             CheckLevelsNumber();
 
