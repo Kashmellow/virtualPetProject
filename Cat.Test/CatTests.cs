@@ -1,94 +1,137 @@
 using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace virtualPetShopB
 {
     public class CatTests
     {
+
+        //[Fact]
+        //public void TestCreateCatObject()
+        //{
+
+        //    var cat = new Cat();
+        //}
+
         [Fact]
-        public void Cat_Hunger_Check()
+        public void TestCatList()
         {
-            //Note(1) This Method created to make a test .
+            // Arrange
+            // var cat = new Cat();
+            List<Cat> myTestCat = new List<Cat>();
 
-            //Arrange
-            Cat mycat = new Cat();
+            // Act
+            myTestCat.Add(new Cat());
+            //string newCatName = "cute";
 
-
-            /*Note(2) after create mycat object the Hunger level will be ( 9 ) 
-             and if you want read the levels chart :
-
-             (Hunger First level  ) From [1] to [3] = Not Hungry");
-             (Hunger Scecond level) From [4] to [6] = Hungry");
-             (Hunger Third level  ) From [7] to [9] = Starving");
-
-             */
-
-            //Act
-            mycat.FeedCat();
-
-            /*Note (3) i called the method (Feed_Cat())
-             and the body for this method
-             
-            public void Feed_Cat()
-        {
-            Health += 1;
-            Hunger -=4;
-            Happy  += 2;
-
-            Check_Levels_Number();
+            // Assert
+            Assert.Equal(1, myTestCat.Count);
         }
-        That is mean the status for Hunger will Decrease -4   
-        and the Hunger will be =9 - 4 = (5)
 
-             */
+        //[Fact]
+        //public void AddStuffToList_Adds_To_StuffToBuy()
+        //{
+        //    var sut = new Grocery();
+
+        //    int initialListCount = sut.ReturnMyList().Count;
+        //    sut.AddStuffToList("stuff");
+        //    var myList = sut.ReturnMyList();
+
+        //    Assert.Equal(initialListCount + 1, myList.Count);
+        //}
+    }
+}
+
+
+
+
+
+
+//[Fact]
+//        public void Cat_Hunger_Check()
+//        {
+//            //Note(1) This Method created to make a test .
+
+//            //Arrange
+//            Cat mycat = new Cat();
+
+
+//            /*Note(2) after create mycat object the Hunger level will be ( 9 ) 
+//             and if you want read the levels chart :
+
+//             (Hunger First level  ) From [1] to [3] = Not Hungry");
+//             (Hunger Scecond level) From [4] to [6] = Hungry");
+//             (Hunger Third level  ) From [7] to [9] = Starving");
+
+//             */
+
+//            //Act
+//            mycat.FeedCat();
+
+//            /*Note (3) i called the method (Feed_Cat())
+//             and the body for this method
+             
+//            public void Feed_Cat()
+//        {
+//            Health += 1;
+//            Hunger -=4;
+//            Happy  += 2;
+
+//            Check_Levels_Number();
+//        }
+//        That is mean the status for Hunger will Decrease -4   
+//        and the Hunger will be =9 - 4 = (5)
+
+//             */
 
             
-            //Assert
-            Assert.Equal(5, mycat.Hunger);
-        }
+//            //Assert
+//            Assert.Equal(5, mycat.Hunger);
+//        }
 
-        [Fact]
+//        [Fact]
 
-        public void Cat_Boredom_Check()
-        {
-            //Note(1) This Method created to make a test .
+//        public void Cat_Boredom_Check()
+//        {
+//            //Note(1) This Method created to make a test .
 
-            //Arrange
-            Cat mycat = new Cat();
+//            //Arrange
+//            Cat mycat = new Cat();
 
-            /*Note(2) after create mycat object the Boredom level will be ( 1 ) 
-             and if you want read the levels chart :
+//            /*Note(2) after create mycat object the Boredom level will be ( 1 ) 
+//             and if you want read the levels chart :
 
-             (Boredom First level  ) From [1] to [3] = Sad");
-             (Boredom Scecond level) From [4] to [6] = It is Ok");
-             (Boredom Third level  ) From [7] to [9] = Happy");
+//             (Boredom First level  ) From [1] to [3] = Sad");
+//             (Boredom Scecond level) From [4] to [6] = It is Ok");
+//             (Boredom Third level  ) From [7] to [9] = Happy");
 
-             */
+//             */
 
-            //Act
-           mycat.PlayWithCat();
+//            //Act
+//           mycat.PlayWithCat();
 
-            /*Note (3) i called the method (Play_With_Cat())
-             and the body for this method
+//            /*Note (3) i called the method (Play_With_Cat())
+//             and the body for this method
 
-            public void Play_With_Cat()
-        {
-            Health += 2;
-            Hunger += 3;
-            Boredom -= 3;
+//            public void Play_With_Cat()
+//        {
+//            Health += 2;
+//            Hunger += 3;
+//            Boredom -= 3;
 
-            Check_Levels_Number();
-        }
+//            Check_Levels_Number();
+//        }
 
-        That is mean the status for 
+//        That is mean the status for 
 
-        and the Boredom will be = 9 - 3 = (6)
+//        and the Boredom will be = 9 - 3 = (6)
 
-             */
+//             */
 
 
-            //Assert
-            Assert.Equal(9, mycat.Boredom);
-        }
-    }
-    }
+//            //Assert
+//            Assert.Equal(9, mycat.Boredom);
+//        }
+//    }
+//    }

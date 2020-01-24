@@ -43,7 +43,6 @@ namespace virtualPetShopB
             myCats[count].FurColor = newCatColor;
 
             Console.WriteLine("How many years old is the cat?");
-            Console.WriteLine("The age between 1 to 9 ");
             int newCatAge = Convert.ToInt32(Console.ReadLine());
 
             myCats[count].Age = newCatAge;
@@ -53,7 +52,7 @@ namespace virtualPetShopB
 
             myCats[count].Lives = newCatLives;
 
-            myCats[count].Hunger = 2;
+            myCats[count].Hunger = 3;
             myCats[count].Boredom = 9;
             myCats[count].Health = 1;
 
@@ -66,13 +65,17 @@ namespace virtualPetShopB
 
         }
 
-        public void PrintValue()
+        public void ViewInfo()
         {
+            Console.WriteLine("| Cat Name |  | Cat Color |");
             foreach (Cat cat in myCats)
             {
-                Console.WriteLine(cat.Name + " " + cat.FurColor + " " + cat.Hunger);
+
+                Console.WriteLine("    "+cat.Name + "         " + cat.FurColor);
+
             }
         }
+
         public void ExitProgram()
         {
             Console.WriteLine("Come back later if you change your mind. Bye!");
@@ -90,22 +93,26 @@ namespace virtualPetShopB
                     break;
 
                 case "2":
-                    PlayWithCat();
+                    ViewInfo();
                     break;
 
                 case "3":
-                    FeedCat();
+                    PlayWithCat();
                     break;
 
                 case "4":
-                    GoToDr();
+                    FeedCat();
                     break;
 
                 case "5":
-                    CheckStatus();
+                    GoToDr();
                     break;
 
                 case "6":
+                    CheckStatus();
+                    break;
+
+                case "7":
                     ExitProgram();
                     break;
 
@@ -116,69 +123,87 @@ namespace virtualPetShopB
         }
         public void PlayWithCat()
         {
-            myCats[myCats.Count-1].Health += 2;
-            myCats[myCats.Count-1].Hunger += 3;
-            myCats[myCats.Count-1].Boredom -= 3;
+            for (int i = 0; i < myCats.Count; i++)
+            {
+                myCats[myCats.Count - 1].Health += 2;
+                myCats[myCats.Count - 1].Hunger += 3;
+                myCats[myCats.Count - 1].Boredom -= 3;
 
-            CheckLevelsNumber();
+                CheckLevelsNumber();
+            }
         }
 
         public void GoToDr()
         {
-            Health += 4;
-            Boredom += 2;
+            for (int i = 0; i < myCats.Count; i++)
+            {
+                myCats[i].Health += 4;
+                myCats[i].Boredom += 2;
 
-            CheckLevelsNumber();
+                CheckLevelsNumber();
+            }
         }
         public void FeedCat()
         {
-            myCats[myCats.Count-1].Health += 1;
-            myCats[myCats.Count-1].Hunger -=4;
-            myCats[myCats.Count-1].Boredom -= 2;
+            //foreach (Cat cat in myCats)
+            for (int i=0;i<myCats.Count;i++)
+               // myCats.Count = 1;
+            {
+                myCats[i].Health += 1;
+                myCats[i].Hunger -= 4;
+                myCats[i].Boredom -= 2;
 
-            CheckLevelsNumber();
-
+                CheckLevelsNumber();
+            }
 
         }
         public void CheckLevelsNumber()
         {
-            if (Health > 9) Health = 9;
-            if (Health < 1) Health = 1;
+            foreach (Cat cat in myCats)
+            {
+                if (cat.Health > 9) cat.Health = 9;
+                if (cat.Health < 1) cat.Health = 1;
 
-            if (Boredom > 9) Boredom = 9;
-            if (Boredom < 1) Boredom = 1;
+                if (cat.Boredom > 9) cat.Boredom = 9;
+                if (cat.Boredom < 1) cat.Boredom = 1;
 
-            if (Hunger > 9) Hunger = 9;
-            if (Hunger < 1) Hunger = 1;
+                if (cat.Hunger > 9) cat.Hunger = 9;
+                if (cat.Hunger < 1) cat.Hunger = 1;
+            }
         }
         
 
         public void CheckStatus()
         {
+            foreach(Cat cat in myCats)
+                {
 
-            CheckLevelsNumber();
 
-            Console.WriteLine("The Status levels between [1 to 9]");
-           
-            Console.WriteLine("(Hunger First level  ) From [1] to [3] = Not Hungry");
-            Console.WriteLine("(Hunger Second level) From [4] to [6] = Hungry");
-            Console.WriteLine("(Hunger Third level  ) From [7] to [9] = Starving");
-            Console.WriteLine("\n");
-            Console.WriteLine("The hunger level for " + " " + Name +" is "+ Hunger );
 
-            Console.WriteLine("\n");
-            Console.WriteLine("(Boredom First level  )  From [7] to [9] = Sad");
-            Console.WriteLine("(Boredom Second level)  From [4] to [6] = It is Ok");
-            Console.WriteLine("(Boredom Third level  )  From [1] to [3] = Happy");
-            Console.WriteLine("\n");
-            Console.WriteLine("The Happy level for " + " " + Name + " is " + Boredom);
+                CheckLevelsNumber();
 
-            Console.WriteLine("\n");
-            Console.WriteLine("(Health First level  )  From [1] to [3] = Bad");
-            Console.WriteLine("(Health Scecond level)  From [4] to [6] = Good");
-            Console.WriteLine("(Health Third level  )  From [7] to [9] = Healthy");
-            Console.WriteLine("\n");
-            Console.WriteLine("The Health level for "+" " + Name + " is " + Health);
+                Console.WriteLine("The Status levels between [1 to 9]");
+
+                Console.WriteLine("From [1] to [3] = Not Hungry");
+                Console.WriteLine("From [4] to [6] = Hungry");
+                Console.WriteLine("From [7] to [9] = Starving");
+                Console.WriteLine("\n");
+                Console.WriteLine("The hunger level for " + " " +cat.Name + " is " + cat.Hunger);
+
+                Console.WriteLine("\n");
+                Console.WriteLine("From [7] to [9] = Bored");
+                Console.WriteLine("From [4] to [6] = It is Ok");
+                Console.WriteLine("From [1] to [3] = Not bored at all");
+                Console.WriteLine("\n");
+                Console.WriteLine("The boredom level for " + " " + cat.Name + " is " + cat.Boredom);
+
+                Console.WriteLine("\n");
+                Console.WriteLine("From [1] to [3] = Bad");
+                Console.WriteLine("From [4] to [6] = Good");
+                Console.WriteLine("From [7] to [9] = Healthy");
+                Console.WriteLine("\n");
+                Console.WriteLine("The Health level for " + " " + cat.Name + " is " + cat.Health);
+            }
         }
 
 

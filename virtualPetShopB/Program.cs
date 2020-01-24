@@ -23,26 +23,23 @@ namespace virtualPetShopB
                 string usingProgram = "0";
 
                 cat.CreateCat();
-                cat.PlayWithCat();
-                cat.CreateCat();
-                cat.PlayWithCat();
-                cat.PrintValue();
- 
-                
+               
+
                     
                 do
                 {
                     Console.WriteLine("Main_Menu \n");
                     Console.WriteLine("Press ( 1 ) if you would like to add another cat");
-                    Console.WriteLine("Press ( 2 ) if you like to play with " + cat.Name);
-                    Console.WriteLine("Press ( 3 ) if you like to Feed " + cat.Name);
-                    Console.WriteLine("Press ( 4 ) if you like to go to the Dr ");
-                    Console.WriteLine("Press ( 5 ) if you like to check the Status ");
-                    Console.WriteLine("Press ( 6 ) if you like to Exit ");
+                    Console.WriteLine("Press ( 2 ) if you would like to view cat info");
+                    Console.WriteLine("Press ( 3 ) to play with the cats");
+                    Console.WriteLine("Press ( 4 ) to feed the cats");
+                    Console.WriteLine("Press ( 5 ) to take the cats to doctor");
+                    Console.WriteLine("Press ( 6 ) to check the Status ");
+                    Console.WriteLine("Press ( 7 ) if you'd like to Exit ");
                   
                     usingProgram = Console.ReadLine();
                     cat.MainMenu(usingProgram);
-                } while (usingProgram != "6");
+                } while (usingProgram != "7");
                 
 
             }
