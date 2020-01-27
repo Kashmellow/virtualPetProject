@@ -5,161 +5,54 @@ using System.Text;
 namespace virtualPetShopB
 {
 
-   public class Cat
+    public class Cat : VirtualPetShelter
     {
-        public string Name { get; set; }
-        public string FurColor { get; set; }
-        public int Age { get; set; }
-        public int Lives { get; set; }
-        public int Hunger { get; set; }
-        public int Health { get; set; }
-        public int Boredom { get; set; }
+        public List<Cat> myPets = new List<Cat>();
+
+        public void SetPet()
+        {
+            myPets.Add(new Cat());
+
+            int count = myPets.Count - 1;
+            myPets[count].Name = Name;
+
+            myPets[count].FurColor = FurColor;
+
+            myPets[count].Age = Age;
+
+            myPets[count].Lives = Lives;
+
+            myPets[count].Id += myPets.Count;
+
+            myPets[count].Hunger = 3;
+
+            myPets[count].Boredom = 9;
+
+            myPets[count].Health = 1;
+
+
+        }
 
         public Cat()
         {
-            Hunger = 9;
-            Boredom = 9;
-            Health = 1;
-        }
-
-        List<Cat> myCats = new List<Cat>();
-
-        public void CreateCat()
-        {
-
-            myCats.Add(new Cat());
-
-            Console.WriteLine("What will you name your new cat?");
-            string newCatName = Console.ReadLine();
-
-            int count = myCats.Count - 1;
-
-            myCats[count].Name = newCatName;
-       
-
-            Console.WriteLine("What color will your cat be?");
-            string newCatColor = Console.ReadLine();
-
-            myCats[count].FurColor = newCatColor;
-
-            Console.WriteLine("How many years old is the cat?");
-            int newCatAge = Convert.ToInt32(Console.ReadLine());
-
-            myCats[count].Age = newCatAge;
-
-            Console.WriteLine("Cats can have nine lives, how many will yours have?");
-            int newCatLives = Convert.ToInt32(Console.ReadLine());
-
-            myCats[count].Lives = newCatLives;
-
-            myCats[count].Hunger = 3;
-            myCats[count].Boredom = 9;
-            myCats[count].Health = 1;
-
-            //Name = newCatName;
-            //FurColor = newCatColor;
-            //Age = newCatAge;
-            //Lives = newCatLives;
-
-
 
         }
 
         public void ViewInfo()
+        //move to new virtualpetshelter class
         {
-            Console.WriteLine("| Cat Name |  | Cat Color |");
-            foreach (Cat cat in myCats)
+            Console.WriteLine("|   I D   |  | Cat Name |  | Cat Color |");
+            foreach (Cat cat in myPets)
             {
 
-                Console.WriteLine("    "+cat.Name + "         " + cat.FurColor);
+                Console.WriteLine("    " + cat.Id +   "       " + cat.Name +    "         " + cat.FurColor);
 
             }
         }
 
-        public void ExitProgram()
-        {
-            Console.WriteLine("Come back later if you change your mind. Bye!");
-            Environment.Exit(0);
-        }
-
-        public void MainMenu(string user_selection)
-        {
-
-
-            switch (user_selection)
-            {
-                case "1":
-                    CreateCat();
-                    break;
-
-                case "2":
-                    ViewInfo();
-                    break;
-
-                case "3":
-                    PlayWithCat();
-                    break;
-
-                case "4":
-                    FeedCat();
-                    break;
-
-                case "5":
-                    GoToDr();
-                    break;
-
-                case "6":
-                    CheckStatus();
-                    break;
-
-                case "7":
-                    ExitProgram();
-                    break;
-
-                default:
-                    break;
-            }
-
-        }
-        public void PlayWithCat()
-        {
-            for (int i = 0; i < myCats.Count; i++)
-            {
-                myCats[myCats.Count - 1].Health += 2;
-                myCats[myCats.Count - 1].Hunger += 3;
-                myCats[myCats.Count - 1].Boredom -= 3;
-
-                CheckLevelsNumber();
-            }
-        }
-
-        public void GoToDr()
-        {
-            for (int i = 0; i < myCats.Count; i++)
-            {
-                myCats[i].Health += 4;
-                myCats[i].Boredom += 2;
-
-                CheckLevelsNumber();
-            }
-        }
-        public void FeedCat()
-        {
-            //foreach (Cat cat in myCats)
-            for (int i=0;i<myCats.Count;i++)
-               // myCats.Count = 1;
-            {
-                myCats[i].Health += 1;
-                myCats[i].Hunger -= 4;
-                myCats[i].Boredom -= 2;
-
-                CheckLevelsNumber();
-            }
-
-        }
         public void CheckLevelsNumber()
         {
-            foreach (Cat cat in myCats)
+            foreach (Cat cat in myPets)
             {
                 if (cat.Health > 9) cat.Health = 9;
                 if (cat.Health < 1) cat.Health = 1;
@@ -171,43 +64,168 @@ namespace virtualPetShopB
                 if (cat.Hunger < 1) cat.Hunger = 1;
             }
         }
-        
-
-        public void CheckStatus()
+        public void ExitProgram()
         {
-            foreach(Cat cat in myCats)
+            Console.WriteLine("Come back later. Bye!");
+            Environment.Exit(0);
+        }
+        public void EditInfo()
+        {
+            Console.WriteLine(" Press ( 1 ) to edit the cat info:  ");
+            Console.WriteLine(" Press ( 2 ) to remove the cat: ");
+
+            string editInformation = Console.ReadLine();
+
+            ViewInfo();
+            Console.WriteLine("write the number next to the cat you would like to edit:");
+            int catIdNumber = Convert.ToInt32(Console.ReadLine());
+
+            if (editInformation == "1")
+            {
+                for (int i = 0; i < myPets.Count; i++)
                 {
+                    if (myPets[i].Id == catIdNumber)
+                    {
+                        Console.Write("What will you name your new cat?   ");
+                        myPets[i].Name = Console.ReadLine();
 
+                        Console.Write("What color will your cat be?   ");
+                        myPets[i].FurColor = Console.ReadLine();
 
+                        Console.Write("How many years old is the cat?  ");
+                        myPets[i].Age = Convert.ToInt32(Console.ReadLine());
+
+                        Console.Write("Cats can have nine lives, how many lives will yours have?   ");
+                        myPets[i].Lives = Convert.ToInt32(Console.ReadLine());
+                        ViewInfo();
+
+                    }
+                    CheckLevelsNumber();
+                }
+            }
+
+            else if (editInformation == "2")
+            {
+                for (int i = 0; i < myPets.Count; i++)
+                {
+                    if (myPets.Count == 1)
+                        myPets.Clear();
+
+                    else if (myPets[i].Id == catIdNumber)
+                    {
+                        myPets.RemoveAt(catIdNumber);
+                        ViewInfo();
+                    }
+                }
+            }
+                }
+
+        public void PlayWithCat()
+        {
+            for (int i = 0; i < myPets.Count; i++)
+            {
+                myPets[i].Health += 1;
+                myPets[i].Hunger -= 4;
+                myPets[i].Boredom -= 2;
 
                 CheckLevelsNumber();
-
-                Console.WriteLine("The Status levels between [1 to 9]");
-
-                Console.WriteLine("From [1] to [3] = Not Hungry");
-                Console.WriteLine("From [4] to [6] = Hungry");
-                Console.WriteLine("From [7] to [9] = Starving");
-                Console.WriteLine("\n");
-                Console.WriteLine("The hunger level for " + " " +cat.Name + " is " + cat.Hunger);
-
-                Console.WriteLine("\n");
-                Console.WriteLine("From [7] to [9] = Bored");
-                Console.WriteLine("From [4] to [6] = It is Ok");
-                Console.WriteLine("From [1] to [3] = Not bored at all");
-                Console.WriteLine("\n");
-                Console.WriteLine("The boredom level for " + " " + cat.Name + " is " + cat.Boredom);
-
-                Console.WriteLine("\n");
-                Console.WriteLine("From [1] to [3] = Bad");
-                Console.WriteLine("From [4] to [6] = Good");
-                Console.WriteLine("From [7] to [9] = Healthy");
-                Console.WriteLine("\n");
-                Console.WriteLine("The Health level for " + " " + cat.Name + " is " + cat.Health);
             }
         }
 
 
-    }
+        public void PlayWithSpecificCat()
+                {
+                    Console.WriteLine("Press the number of the cat to play with on this list");
+                    ViewInfo();
+                    int userChoice = Convert.ToInt32(Console.ReadLine());
+                    for (int i = 0; i < myPets.Count; i++)
+                    {
+                        if (myPets[i].Id == userChoice)
+                        {
+                            myPets[i].Health += 2;
+                            myPets[i].Hunger += 3;
+                            myPets[i].Boredom -= 3;
+
+                        }
+                        CheckLevelsNumber();
+                    }
+                }
+
+                public void FeedSpecificCat()
+                {
+                    Console.Write("Press the number for the cat you would like to feed:   ");
+                    ViewInfo();
+                    int userChoice = Convert.ToInt32(Console.ReadLine());
+                    for (int i = 0; i < myPets.Count; i++)
+                    {
+                        myPets[i].Health += 2;
+                        myPets[i].Hunger += 3;
+                        myPets[i].Boredom -= 3;
+                    }
+                    CheckLevelsNumber();
+                }
+
+            
+   
+            public void GoToDr()
+            {
+                for (int i = 0; i < myPets.Count; i++)
+                {
+                    myPets[i].Health += 4;
+                    myPets[i].Boredom += 2;
+
+                    CheckLevelsNumber();
+                }
+            }
+
+            public void FeedCat()
+
+            {
+                for (int i = 0; i < myPets.Count; i++)
+                {
+                    myPets[i].Health += 1;
+                    myPets[i].Hunger -= 4;
+                    myPets[i].Boredom -= 2;
+
+                    CheckLevelsNumber();
+                }
+            }
 
 
-}
+            
+
+
+            public void CheckStatus()
+            {
+                foreach (Cat cat in myPets)
+                {
+
+
+
+                    CheckLevelsNumber();
+
+                    Console.WriteLine("The Status levels between [1 to 9] \n");
+
+                    Console.WriteLine("\n");
+                    Console.WriteLine("The hunger level for " + " " + cat.Name + " is " + cat.Hunger);
+
+                    Console.WriteLine("\n");
+                    Console.WriteLine("The boredom level for " + " " + cat.Name + " is " + cat.Boredom);
+
+                    Console.WriteLine("\n");
+                    Console.WriteLine("The Health level for " + " " + cat.Name + " is " + cat.Health);
+                }
+            }
+
+
+
+
+
+
+
+        }
+
+    
+
+
+   }
