@@ -6,30 +6,30 @@ namespace virtualPetShopB
 {
     public class VirtualPetShelter
     {
-        Cat cat = new Cat();
+        //Cat cat = new Cat();
 
         public List<Cat> myPets = new List<Cat>();
 
-        public void SetPet()
-        {
-            myPets.Add(new Cat());
+        //public void SetPet()
+        //{
+        //    myPets.Add(new Cat());
 
-            int count = myPets.Count - 1;
-            myPets[count].Name = cat.Name;
+        //    int count = myPets.Count - 1;
+        //    myPets[count].Name = cat.Name;
 
-            myPets[count].FurColor = cat.FurColor;
+        //    myPets[count].FurColor = cat.FurColor;
 
-            myPets[count].Age = cat.Age;
+        //    myPets[count].Age = cat.Age;
 
-            myPets[count].Lives = cat.Lives;
+        //    myPets[count].Lives = cat.Lives;
 
-            myPets[count].Hunger = 3;
+        //    myPets[count].Hunger = 3;
 
-            myPets[count].Boredom = 9;
+        //    myPets[count].Boredom = 9;
 
-            myPets[count].Health = 1;
+        //    myPets[count].Health = 1;
 
-        }
+        //}
     
     public void ViewInfo()
        
@@ -47,11 +47,13 @@ namespace virtualPetShopB
         {
             for (int i = 0; i < myPets.Count; i++)
             {
-                myPets[i].Health += 1;
-                myPets[i].Hunger -= 4;
-                myPets[i].Boredom -= 2;
+                //myPets[i].Health += 1;
+                //myPets[i].Hunger -= 4;
+                //myPets[i].Boredom -= 2;
 
-                cat.CheckLevelsNumber();
+                myPets[i].PlayWithCat();
+
+                myPets[i].CheckLevelsNumber();
 
                 //myPets[userChoice - 1].PlayWithCat();
             }

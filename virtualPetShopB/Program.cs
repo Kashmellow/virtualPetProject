@@ -26,8 +26,8 @@ namespace virtualPetShopB
                 string usingProgram = "0";
 
                 cat.CreatePet();
-                pet.SetPet();
-               
+                // pet.SetPet();
+                pet.myPets.Add(cat);
 
                     
                 do
@@ -50,7 +50,9 @@ namespace virtualPetShopB
                     {
                         case "1":
                             cat.CreatePet();
-                            pet.SetPet();
+                            //pet.SetPet();
+                            pet.myPets.Add(cat);
+                            Console.WriteLine(pet.myPets.Count);
                             break;
 
                         case "2":
