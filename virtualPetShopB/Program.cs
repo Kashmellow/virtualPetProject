@@ -10,7 +10,7 @@ namespace virtualPetShopB
         static void Main(string[] args)
         {
             Cat cat = new Cat();
-            VirtualPetShelter pet = new VirtualPetShelter();
+            VirtualPetShelter shelter = new VirtualPetShelter();
 
             Console.WriteLine("Would you like to add a cat to the shelter?  \n" +
                  "press 1 if you would like to add a cat \n" +
@@ -23,12 +23,10 @@ namespace virtualPetShopB
 
             else
             {
-                string usingProgram = "0";
+                string userChoice = "0";
 
                 cat.CreatePet();
-                // pet.SetPet();
-                pet.myPets.Add(cat);
-
+                shelter.myPets.Add(cat);
                     
                 do
                 {
@@ -44,46 +42,49 @@ namespace virtualPetShopB
                     Console.WriteLine("Press ( 9 ) to check the Status ");
                     Console.WriteLine("Press ( 10 ) if you would like to edit the info  ");
                     Console.WriteLine("Press ( 11 ) if you'd like to Exit ");
-                    usingProgram = Console.ReadLine();
+                    userChoice = Console.ReadLine();
 
-                    switch(usingProgram)
+                    switch(userChoice)
                     {
                         case "1":
                             cat.CreatePet();
-                            //pet.SetPet();
-                            pet.myPets.Add(cat);
-                            Console.WriteLine(pet.myPets.Count);
+                            shelter.myPets.Add(cat);
+                            Console.WriteLine(shelter.myPets.Count);
                             break;
 
                         case "2":
-                            pet.ViewInfo();
+                            shelter.ViewInfoAll();
                             break;
 
                         case "3":
-                            pet.PlayWithCat();
+                            shelter.PlayWithAllCats();
                             break;
 
                         case "4":
-                            cat.PlayWithSpecificCat();
+                            cat = shelter.ChoosePet();
+                            cat.PlayWithCat();
                             break;
 
                         case "5":
-                            pet.FeedCat();
+                            shelter.FeedCat();
                             break;
 
                         case "6":
+                            cat = shelter.ChoosePet();
                             cat.FeedSpecificCat();
                             break;
 
                         case "7":
-                            pet.GoToDr();
+                            shelter.GoToDrAll();
                             break;
 
                         case "8":
-                            //take specific cat to doctor
+                            cat = shelter.ChoosePet();
+                            cat.GoToDr();
+                            break;
 
                         case "9":
-                            cat.CheckStatus();
+                            shelter.CheckStatusAll();
                             break;
 
                         case "10":
@@ -99,7 +100,7 @@ namespace virtualPetShopB
                     }
 
                     
-                } while (usingProgram != "11");
+                } while (userChoice != "11");
                 
 
             }
