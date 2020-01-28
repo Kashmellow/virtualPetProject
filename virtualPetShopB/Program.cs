@@ -101,5 +101,10 @@ namespace virtualPetShopB
             }
 
         }
+        public void ExitProgram()
+        {
+            Console.WriteLine("Come back later. Bye!");
+            Environment.Exit(0);
+        }
     }
 }

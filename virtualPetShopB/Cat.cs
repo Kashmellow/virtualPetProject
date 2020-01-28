@@ -5,50 +5,21 @@ using System.Text;
 namespace virtualPetShopB
 {
 
-    public class Cat : VirtualPetShelter
+    public class Cat 
     {
-        public List<Cat> myPets = new List<Cat>();
-
-        public void SetPet()
-        {
-            myPets.Add(new Cat());
-
-            int count = myPets.Count - 1;
-            myPets[count].Name = Name;
-
-            myPets[count].FurColor = FurColor;
-
-            myPets[count].Age = Age;
-
-            myPets[count].Lives = Lives;
-
-            myPets[count].Id += myPets.Count;
-
-            myPets[count].Hunger = 3;
-
-            myPets[count].Boredom = 9;
-
-            myPets[count].Health = 1;
-
-
-        }
+        public string Name { get; set; }
+        public string FurColor { get; set; }
+        public int Age { get; set; }
+        public int Lives { get; set; }
+        public int Hunger { get; set; }
+        public int Health { get; set; }
+        public int Boredom { get; set; }
 
         public Cat()
         {
 
         }
 
-        public void ViewInfo()
-        //move to new virtualpetshelter class
-        {
-            Console.WriteLine("|   I D   |  | Cat Name |  | Cat Color |");
-            foreach (Cat cat in myPets)
-            {
-
-                Console.WriteLine("    " + cat.Id +   "       " + cat.Name +    "         " + cat.FurColor);
-
-            }
-        }
 
         public void CheckLevelsNumber()
         {
@@ -64,11 +35,7 @@ namespace virtualPetShopB
                 if (cat.Hunger < 1) cat.Hunger = 1;
             }
         }
-        public void ExitProgram()
-        {
-            Console.WriteLine("Come back later. Bye!");
-            Environment.Exit(0);
-        }
+       
         public void EditInfo()
         {
             Console.WriteLine(" Press ( 1 ) to edit the cat info:  ");
@@ -120,17 +87,7 @@ namespace virtualPetShopB
             }
                 }
 
-        public void PlayWithCat()
-        {
-            for (int i = 0; i < myPets.Count; i++)
-            {
-                myPets[i].Health += 1;
-                myPets[i].Hunger -= 4;
-                myPets[i].Boredom -= 2;
-
-                CheckLevelsNumber();
-            }
-        }
+       
 
 
         public void PlayWithSpecificCat()
@@ -167,29 +124,7 @@ namespace virtualPetShopB
 
             
    
-            public void GoToDr()
-            {
-                for (int i = 0; i < myPets.Count; i++)
-                {
-                    myPets[i].Health += 4;
-                    myPets[i].Boredom += 2;
-
-                    CheckLevelsNumber();
-                }
-            }
-
-            public void FeedCat()
-
-            {
-                for (int i = 0; i < myPets.Count; i++)
-                {
-                    myPets[i].Health += 1;
-                    myPets[i].Hunger -= 4;
-                    myPets[i].Boredom -= 2;
-
-                    CheckLevelsNumber();
-                }
-            }
+         
 
 
             

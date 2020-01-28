@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "virtualPetShopB", "virtualPetShopB\virtualPetShopB.csproj", "{48A633AA-2C31-47B2-A055-85534698F7BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "virtualPetShopB", "virtualPetShopB\virtualPetShopB.csproj", "{48A633AA-2C31-47B2-A055-85534698F7BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cat.Test", "Cat.Test\Cat.Test.csproj", "{CAD66875-3590-4774-BC8B-528D8A906991}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualPetShopB.Tests", "Cat.Test\VirtualPetShopB.Tests.csproj", "{CAD66875-3590-4774-BC8B-528D8A906991}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
