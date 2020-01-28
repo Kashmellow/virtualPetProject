@@ -6,9 +6,11 @@ namespace virtualPetShopB
     {
        
         public static object Exit { get; private set; }
+        
         static void Main(string[] args)
         {
             Cat cat = new Cat();
+            VirtualPetShelter pet = new VirtualPetShelter();
 
             Console.WriteLine("Would you like to add a cat to the shelter?  \n" +
                  "press 1 if you would like to add a cat \n" +
@@ -24,7 +26,7 @@ namespace virtualPetShopB
                 string usingProgram = "0";
 
                 cat.CreatePet();
-                cat.SetPet();
+                pet.SetPet();
                
 
                     
@@ -48,15 +50,15 @@ namespace virtualPetShopB
                     {
                         case "1":
                             cat.CreatePet();
-                            cat.SetPet();
+                            pet.SetPet();
                             break;
 
                         case "2":
-                            cat.ViewInfo();
+                            pet.ViewInfo();
                             break;
 
                         case "3":
-                            cat.PlayWithCat();
+                            pet.PlayWithCat();
                             break;
 
                         case "4":
@@ -64,7 +66,7 @@ namespace virtualPetShopB
                             break;
 
                         case "5":
-                            cat.FeedCat();
+                            pet.FeedCat();
                             break;
 
                         case "6":
@@ -72,7 +74,7 @@ namespace virtualPetShopB
                             break;
 
                         case "7":
-                            cat.GoToDr();
+                            pet.GoToDr();
                             break;
 
                         case "8":
@@ -83,7 +85,7 @@ namespace virtualPetShopB
                             break;
 
                         case "10":
-                            cat.EditInfo();
+                       //     cat.EditInfo();
                             break;
 
                         case "11":
@@ -101,10 +103,6 @@ namespace virtualPetShopB
             }
 
         }
-        public void ExitProgram()
-        {
-            Console.WriteLine("Come back later. Bye!");
-            Environment.Exit(0);
-        }
+       
     }
 }

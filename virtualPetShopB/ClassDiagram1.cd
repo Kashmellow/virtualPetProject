@@ -3,7 +3,7 @@
   <Class Name="virtualPetShopB.Cat">
     <Position X="1.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABGAAAAAEAAAAAAEAAAAQBAAACIAACAAAAAAAAIAA=</HashCode>
+      <HashCode>AAABGAAAAAEAAAAAAEgAAAQBAAACIAACAAAAAAAAIAA=</HashCode>
       <FileName>Cat.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -12,6 +12,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAABAAAACA=</HashCode>
       <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="virtualPetShopB.VirtualPetShelter">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIBAAAAAAAAAAACAAgAAAQAAAAAAAAAAAAQAAAAIA=</HashCode>
+      <FileName>VirtualPetShelter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
