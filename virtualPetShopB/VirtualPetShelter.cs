@@ -6,31 +6,8 @@ namespace virtualPetShopB
 {
     public class VirtualPetShelter
     {
-        //Cat cat = new Cat();
 
         public List<Cat> myPets = new List<Cat>();
-
-        //public void SetPet()
-        //{
-        //    myPets.Add(new Cat());
-
-        //    int count = myPets.Count - 1;
-        //    myPets[count].Name = cat.Name;
-
-        //    myPets[count].FurColor = cat.FurColor;
-
-        //    myPets[count].Age = cat.Age;
-
-        //    myPets[count].Lives = cat.Lives;
-
-        //    myPets[count].Hunger = 3;
-
-        //    myPets[count].Boredom = 9;
-
-        //    myPets[count].Health = 1;
-
-        //}
-
         public void ViewInfoAll()
 
         {

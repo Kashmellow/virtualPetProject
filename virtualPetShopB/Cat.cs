@@ -59,7 +59,6 @@ namespace virtualPetShopB
 
         public void CheckLevelsNumber()
         {
-            //foreach (Cat cat in pet.myPets)
 
             if (Health > 9) Health = 9;
             if (Health < 1) Health = 1;
@@ -137,24 +136,6 @@ namespace virtualPetShopB
 
             CheckLevelsNumber();
         }
-
-
-        //public void PlayWithSpecificCat()
-        //{
-        //    Console.WriteLine("Press the number of the cat to play with on this list");
-        //    pet.ViewInfo();
-        //    int userChoice = Convert.ToInt32(Console.ReadLine());
-
-
-
-        //    pet.myPets[userChoice - 1].Health += 2;
-        //    pet.myPets[userChoice - 1].Hunger += 3;
-        //    pet.myPets[userChoice - 1].Boredom -= 3;
-
-
-        //    CheckLevelsNumber();
-
-        //}
 
         public void FeedSpecificCat()
         {
