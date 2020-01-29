@@ -21,7 +21,7 @@ namespace virtualPetShopB
 
         public Cat()
         {
-            Hunger = 9;
+            Hunger = 5;
             Health = 1;
             Boredom = 9;
         }
