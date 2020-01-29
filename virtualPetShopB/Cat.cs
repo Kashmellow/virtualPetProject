@@ -134,6 +134,8 @@ namespace virtualPetShopB
             Health += 2;
             Hunger += 3;
             Boredom -= 3;
+
+            CheckLevelsNumber();
         }
 
 
@@ -157,7 +159,7 @@ namespace virtualPetShopB
         public void FeedSpecificCat()
         {
             Health += 2;
-            Hunger += 3;
+            Hunger -= 3;
             Boredom -= 3;
             CheckLevelsNumber();
         }
@@ -183,7 +185,7 @@ namespace virtualPetShopB
         public void GoToDr()
         {
                Health += 4;
-               Boredom += 2;
+               Boredom -= 2;
 
                CheckLevelsNumber();
         }
