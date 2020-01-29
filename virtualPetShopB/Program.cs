@@ -47,6 +47,7 @@ namespace virtualPetShopB
                     switch(userChoice)
                     {
                         case "1":
+                            cat = new Cat();
                             cat.CreatePet();
                             shelter.myPets.Add(cat);
                             Console.WriteLine(shelter.myPets.Count);

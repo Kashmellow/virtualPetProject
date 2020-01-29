@@ -36,7 +36,7 @@ namespace virtualPetShopB
         {
             int Id = 1;
             Console.WriteLine("|   I D   |  | Cat Name |  | Cat Color |");
-            for (int i = 0; i < myPets.Count-1; i++)
+            for (int i = 0; i < myPets.Count; i++)
             {
 
                 Console.WriteLine("    " + Id + "       " + myPets[i].Name + "         " + myPets[i].FurColor);

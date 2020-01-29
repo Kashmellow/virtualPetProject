@@ -21,7 +21,9 @@ namespace virtualPetShopB
 
         public Cat()
         {
-
+            Hunger = 9;
+            Health = 1;
+            Boredom = 9;
         }
         public void ExitProgram()
         {
