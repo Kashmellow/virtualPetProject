@@ -9,20 +9,18 @@ namespace virtualPetShopB
 
     public class Cat
     {
-        VirtualPetShelter pet = new VirtualPetShelter();
+        // VirtualPetShelter pet = new VirtualPetShelter();
 
         public string Name { get; set; }
         public string FurColor { get; set; }
         public int Age { get; set; }
         public int Lives { get; set; }
-        public int Hunger { get; set; }
-        public int Health { get; set; }
+        
         public int Boredom { get; set; }
 
         public Cat()
         {
-            Hunger = 5;
-            Health = 1;
+           
             Boredom = 9;
         }
         public void ExitProgram()
@@ -33,6 +31,7 @@ namespace virtualPetShopB
 
         public void CreatePet()
         {
+     //       OrganicCat cat = new OrganicCat();
             Console.Write("What will you name your new cat?    ");
             string newCatName = Console.ReadLine();
 
@@ -57,19 +56,7 @@ namespace virtualPetShopB
 
         }
 
-        public void CheckLevelsNumber()
-        {
-
-            if (Health > 9) Health = 9;
-            if (Health < 1) Health = 1;
-
-            if (Boredom > 9) Boredom = 9;
-            if (Boredom < 1) Boredom = 1;
-
-            if (Hunger > 9) Hunger = 9;
-            if (Hunger < 1) Hunger = 1;
-
-        }
+   
 
         /*  public void EditInfo()
           {
@@ -125,16 +112,13 @@ namespace virtualPetShopB
 
 
 
-        public void PlayWithCat()
-        
-            
+        private void PlayWithCat()
         {
-            
-            Health += 2;
-            Hunger += 3;
+
+            Console.WriteLine("Cat");
             Boredom -= 3;
 
-            CheckLevelsNumber();
+          //  CheckLevelsNumber();
         }
 
         public void FeedSpecificCat()

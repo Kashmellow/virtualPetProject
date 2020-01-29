@@ -24,7 +24,7 @@ namespace virtualPetShopB
             else
             {
                 string userChoice = "0";
-
+                // cat = cat.SelectCatType();
                 cat.CreatePet();
                 shelter.myPets.Add(cat);
                     
@@ -47,7 +47,9 @@ namespace virtualPetShopB
                     switch(userChoice)
                     {
                         case "1":
+                            // instead of assigning cat to Cat(), assign it to Organic() or Robotic()
                             cat = new Cat();
+                            // cat = new RoboticCat();
                             cat.CreatePet();
                             shelter.myPets.Add(cat);
                             Console.WriteLine(shelter.myPets.Count);
