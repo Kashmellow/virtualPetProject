@@ -16,7 +16,7 @@ namespace virtualPetShopB
             for (int i = 0; i < myPets.Count; i++)
             {
 
-                Console.WriteLine("    " + Id + "       " + myPets[i].Name + "         " + myPets[i].FurColor);
+                Console.WriteLine("    " + Id + "         " + myPets[i].Name + "          " + myPets[i].FurColor);
                 Id++;
             }
         }
@@ -58,37 +58,46 @@ namespace virtualPetShopB
             }
         }
         public void CheckStatusAll()
-        {
+        {for (int j= 0; j< 1000;j++)
+            {
+                Console.Write("     ^   ^       ^   ^        ^   ^        ^   ^        ^   ^        ^   ^   CAT  ^   ^    "); 
+                Console.Write("    ( o.o ) CAT ( o.o )      ( o.o )      ( o.o )      ( o.o )      ( o.o )      ( o.o )   ");
+                Console.Write("     > ^ <       > ^ <        > ^ < CAT    > ^ <        > ^ <        > ^ <        > ^ <    ");
+            }
+            Console.WriteLine("");
+            Console.WriteLine("                                 The status levels are between 1 (low) to 9 (high) \n");
+           
+            Console.WriteLine("   |    Cat Name      |        |   Energy Need   |       |   Physical Condition   |       |  Boredom Level  |");
+
             for (int i = 0; i < myPets.Count; i++)
             {
 
-                Console.WriteLine("The status levels are between 1 (low) to 9 (high) \n");
-
+              
                 Console.WriteLine("\n");
-                Console.WriteLine("The energy need for " + " " + myPets[i].Name + " is " + myPets[i].HungerNeedFuel);
+             //   Console.WriteLine("" + myPets[i].Name + "        " + myPets[i].HungerNeedFuel +"     " + myPets[i].HealthMaintenanceCondition + "     "+ myPets[i].Boredom);
+                string stdata = string.Format("{0,10 }  {1,20}  {2,20} {3,20} ", myPets[i].Name, myPets[i].HungerNeedFuel, myPets[i].HealthMaintenanceCondition, myPets[i].Boredom);
 
-                Console.WriteLine("\n");
-                Console.WriteLine("The boredom level for " + " " + myPets[i].Name + " is " + myPets[i].Boredom);
-
-                Console.WriteLine("\n");
-               Console.WriteLine("The physical condition for " + " " + myPets[i].Name + " is " + myPets[i].HealthMaintenanceCondition);
+                Console.WriteLine(stdata);
             }
 
         }
 
         public void AdoptCat()
           {
-
+            
 
             ViewInfoAll();
-            
-            Console.WriteLine("write the number next to the cat you would like to edit:");
+            Console.WriteLine("\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n");
+            Console.Write("write the number next to the cat you would like to adopt:");
             int catIdNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\n");
+            Console.WriteLine("Congratulations! You have just adopted "+ myPets[catIdNumber - 1].Name);
+            Console.WriteLine("\n");
 
             myPets.RemoveAt(catIdNumber-1);
             ViewInfoAll();
 
-
+            Console.WriteLine("\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \n");
         }
                
 

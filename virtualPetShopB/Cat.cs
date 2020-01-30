@@ -61,7 +61,7 @@ namespace virtualPetShopB
 
             Age = newCatAge;
 
-            Console.Write("Cats can have nine lives, how many will yours have?    ");
+            Console.Write("Cats can have 9 lives, how many will yours have?    ");
 
             int newCatLives = Convert.ToInt32(Console.ReadLine());
 

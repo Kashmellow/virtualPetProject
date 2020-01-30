@@ -45,6 +45,7 @@ namespace virtualPetShopB
         {
             HealthMaintenanceCondition += 2;
             HungerNeedFuel -= 3;
+
             CheckLevelsNumber();
         }
 
@@ -55,23 +56,6 @@ namespace virtualPetShopB
 
             CheckLevelsNumber();
         }
-
-        //public CheckStatusOrganic()
-        //{
-        //    for (int i = 0; i < myPets.Count; i++)
-        //    {
-
-        //        Console.WriteLine("The Status levels between [1 to 9] \n");
-
-        //        Console.WriteLine("\n");
-        //        Console.WriteLine("The hunger level for " + " " + myPets[i].Name + " is " + myPets[i].Hunger);
-
-        //        Console.WriteLine("\n");
-        //        Console.WriteLine("The boredom level for " + " " + myPets[i].Name + " is " + myPets[i].Boredom);
-
-        //        Console.WriteLine("\n");
-        //        Console.WriteLine("The Health level for " + " " + myPets[i].Name + " is " + myPets[i].Health);
-        //    }
 
     }
     
