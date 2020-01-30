@@ -6,7 +6,7 @@ namespace virtualPetShopB
 {
     public class VirtualPetShelter
     {
-
+    
         public List<Cat> myPets = new List<Cat>();
         public void ViewInfoAll()
 
@@ -36,7 +36,6 @@ namespace virtualPetShopB
 
                     myPets[i].PlayWithCat();
 
-                    myPets[i].CheckLevelsNumber();
                 }
         }
         public void GoToDrAll()
@@ -46,7 +45,6 @@ namespace virtualPetShopB
         
                 myPets[i].GoToDr();
 
-                myPets[i].CheckLevelsNumber();
             }
         }
 
@@ -57,7 +55,6 @@ namespace virtualPetShopB
             {
                 myPets[i].FeedSpecificCat();
 
-                myPets[i].CheckLevelsNumber();
             }
         }
         public void CheckStatusAll()
@@ -68,13 +65,13 @@ namespace virtualPetShopB
                 Console.WriteLine("The Status levels between [1 to 9] \n");
 
                 Console.WriteLine("\n");
-                Console.WriteLine("The hunger level for " + " " + myPets[i].Name + " is " + myPets[i].Hunger);
+                Console.WriteLine("The hunger level for " + " " + myPets[i].Name + " is " + myPets[i].HungerNeedFuel);
 
                 Console.WriteLine("\n");
                 Console.WriteLine("The boredom level for " + " " + myPets[i].Name + " is " + myPets[i].Boredom);
 
                 Console.WriteLine("\n");
-                Console.WriteLine("The Health level for " + " " + myPets[i].Name + " is " + myPets[i].Health);
+               Console.WriteLine("The Health level for " + " " + myPets[i].Name + " is " + myPets[i].HealthMaintenanceCondition);
             }
 
         }

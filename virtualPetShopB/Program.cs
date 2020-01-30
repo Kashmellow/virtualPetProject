@@ -31,7 +31,8 @@ namespace virtualPetShopB
                 do
                 {
                     Console.WriteLine("Main_Menu \n");
-                    Console.WriteLine("Press ( 1 ) if you would like to add another cat");
+                    Console.WriteLine("Press ( 0 ) if you would like to add Robtic cat");
+                    Console.WriteLine("Press ( 1 ) if you would like to add Organic cat");
                     Console.WriteLine("Press ( 2 ) if you would like to view all cat info");
                     Console.WriteLine("Press ( 3 ) to play with all of the cats");
                     Console.WriteLine("Press ( 4 ) to play with a specific cat");
@@ -46,14 +47,27 @@ namespace virtualPetShopB
 
                     switch(userChoice)
                     {
-                        case "1":
-                            // instead of assigning cat to Cat(), assign it to Organic() or Robotic()
-                            cat = new Cat();
-                            // cat = new RoboticCat();
+                        case "0":
+                            cat = new RoboticCat(5,1);
                             cat.CreatePet();
                             shelter.myPets.Add(cat);
-                            Console.WriteLine(shelter.myPets.Count);
                             break;
+
+                        case "1":
+                            cat = new OrganicCat(5,1);
+                            cat.CreatePet();
+                            
+                            shelter.myPets.Add(cat);
+                            break;
+
+                        //case "1":
+                        //    // instead of assigning cat to Cat(), assign it to Organic() or Robotic()
+                        //    cat = new Cat();
+                        //    // cat = new RoboticCat();
+                        //    cat.CreatePet();
+                        //    shelter.myPets.Add(cat);
+                        //    Console.WriteLine(shelter.myPets.Count);
+                        //    break;
 
                         case "2":
                             shelter.ViewInfoAll();

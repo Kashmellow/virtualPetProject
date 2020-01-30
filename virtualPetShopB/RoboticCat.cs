@@ -15,6 +15,11 @@ namespace virtualPetShopB
             NeedsFuel = 5;
             MaintenanceCondition = 1;
         }
+
+        public RoboticCat(int X, int Y) : base(X, Y)
+        {
+
+        }
         public void CheckLevelsNumber()
         {
 

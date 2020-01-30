@@ -9,7 +9,7 @@ namespace virtualPetShopB
 
     public class Cat
     {
-        // VirtualPetShelter pet = new VirtualPetShelter();
+        
 
         public string Name { get; set; }
         public string FurColor { get; set; }
@@ -17,12 +17,26 @@ namespace virtualPetShopB
         public int Lives { get; set; }
         
         public int Boredom { get; set; }
+       public int HungerNeedFuel { get; set; }
+       public int HealthMaintenanceCondition { get; set; }
+        
 
+        
         public Cat()
         {
            
+            
             Boredom = 9;
         }
+
+        public Cat(int X ,int Y)
+        {
+            HungerNeedFuel = X;
+            HealthMaintenanceCondition = Y;
+            Boredom = 9;
+           
+        }
+       
         public void ExitProgram()
         {
             Console.WriteLine("Come back later. Bye!");
@@ -115,10 +129,9 @@ namespace virtualPetShopB
         public virtual  void PlayWithCat()
         {
 
-            Console.WriteLine("Cat");
+           
             Boredom -= 3;
 
-          //  CheckLevelsNumber();
         }
 
         public virtual void FeedSpecificCat()

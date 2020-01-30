@@ -6,5 +6,6 @@ namespace VirtualPetShopB.Tests
 {
     class RoboticCatTests
     {
+
     }
 }
