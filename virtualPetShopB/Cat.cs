@@ -112,7 +112,7 @@ namespace virtualPetShopB
 
 
 
-        private void PlayWithCat()
+        public virtual  void PlayWithCat()
         {
 
             Console.WriteLine("Cat");
@@ -121,38 +121,15 @@ namespace virtualPetShopB
           //  CheckLevelsNumber();
         }
 
-        public void FeedSpecificCat()
+        public virtual void FeedSpecificCat()
         {
-            Health += 2;
-            Hunger -= 3;
             Boredom -= 3;
-            CheckLevelsNumber();
         }
 
-        public void CheckStatus()
+
+        public virtual void GoToDr()
         {
-
-            CheckLevelsNumber();
-
-            Console.WriteLine("The Status levels between [1 to 9] \n");
-
-            Console.WriteLine("\n");
-            Console.WriteLine("The hunger level for " + " " + Name + " is " + Hunger);
-
-            Console.WriteLine("\n");
-            Console.WriteLine("The boredom level for " + " " + Name + " is " + Boredom);
-
-            Console.WriteLine("\n");
-            Console.WriteLine("The Health level for " + " " + Name + " is " + Health);
-
-        }
-
-        public void GoToDr()
-        {
-               Health += 4;
                Boredom -= 2;
-
-               CheckLevelsNumber();
         }
 
 

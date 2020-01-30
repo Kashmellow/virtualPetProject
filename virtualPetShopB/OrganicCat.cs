@@ -29,14 +29,28 @@ namespace virtualPetShopB
 
         }
 
-        public   void PlayWithCat()
+        public override void PlayWithCat()
         {
            
             Hunger = 5;
             Health = 1;
-            Boredom -= 3;
+           
           
-            //  CheckLevelsNumber();
+             CheckLevelsNumber();
+        }
+
+        public override void FeedSpecificCat()
+        {
+            Health += 2;
+            Hunger -= 3;
+            CheckLevelsNumber();
+        }
+
+        public override void GoToDr()
+        {
+            Health += 4;
+
+            CheckLevelsNumber();
         }
 
     }
