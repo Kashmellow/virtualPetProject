@@ -6,16 +6,12 @@ namespace virtualPetShopB
 {
     public class OrganicCat : Cat
     {
-        public int Hunger { get; set; }
-        public int Health { get; set; }
-
         public OrganicCat()
         {
-            Hunger = 5;
-            Health=1;
+           
         }
 
-        public OrganicCat(int Hunger  , int Health) : base(Hunger , Health)
+        public OrganicCat(int Hunger, int Health) : base(Hunger, Health)
             {
             //Hunger = 5;
             //Health = 1;
@@ -24,14 +20,14 @@ namespace virtualPetShopB
         public void CheckLevelsNumber()
         {
 
-            if (Health > 9) Health = 9;
-            if (Health < 1) Health = 1;
+            if (HealthMaintenanceCondition > 9) HealthMaintenanceCondition = 9;
+            if (HealthMaintenanceCondition < 1) HealthMaintenanceCondition = 1;
 
             if (Boredom > 9) Boredom = 9;
             if (Boredom < 1) Boredom = 1;
 
-            if (Hunger > 9) Hunger = 9;
-            if (Hunger < 1) Hunger = 1;
+            if (HungerNeedFuel > 9) HungerNeedFuel = 9;
+            if (HungerNeedFuel < 1) HungerNeedFuel = 1;
 
         }
 
@@ -41,20 +37,21 @@ namespace virtualPetShopB
             HungerNeedFuel += 1;
             HealthMaintenanceCondition += 1;
             Boredom -= 3;
-            Console.WriteLine("hhhhhhhhhhhhhhhhhhhhhhhhhh");
+            
              CheckLevelsNumber();
         }
 
         public override void FeedSpecificCat()
         {
-            Health += 2;
-            Hunger -= 3;
+            HealthMaintenanceCondition += 2;
+            HungerNeedFuel -= 3;
             CheckLevelsNumber();
         }
 
         public override void GoToDr()
         {
-            Health += 4;
+            HealthMaintenanceCondition += 4;
+            Boredom -= 3;
 
             CheckLevelsNumber();
         }
