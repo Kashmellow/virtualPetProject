@@ -10,9 +10,12 @@ namespace virtualPetShopB
         public int Health { get; set; }
 
         public OrganicCat()
-        { }
+        {
+            Hunger = 5;
+            Health=1;
+        }
 
-        public OrganicCat(int X  , int Y) : base(X , Y)
+        public OrganicCat(int Hunger  , int Health) : base(Hunger , Health)
             {
             //Hunger = 5;
             //Health = 1;
@@ -34,11 +37,11 @@ namespace virtualPetShopB
 
         public override void PlayWithCat()
         {
-           
-            Hunger = 5;
-            Health = 1;
-           
-          
+
+            HungerNeedFuel += 1;
+            HealthMaintenanceCondition += 1;
+            Boredom -= 3;
+            Console.WriteLine("hhhhhhhhhhhhhhhhhhhhhhhhhh");
              CheckLevelsNumber();
         }
 

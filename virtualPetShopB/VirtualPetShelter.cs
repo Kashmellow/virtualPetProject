@@ -75,6 +75,24 @@ namespace virtualPetShopB
             }
 
         }
+
+        public void AdoptCat()
+          {
+
+
+            ViewInfoAll();
+            
+            Console.WriteLine("write the number next to the cat you would like to edit:");
+            int catIdNumber = Convert.ToInt32(Console.ReadLine());
+
+            myPets.RemoveAt(catIdNumber-1);
+            ViewInfoAll();
+
+
+        }
+               
+
+
     }
 
 }

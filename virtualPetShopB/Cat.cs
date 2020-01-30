@@ -26,16 +26,17 @@ namespace virtualPetShopB
         {
            
             
-            Boredom = 9;
+           
         }
 
-        public Cat(int X ,int Y)
+        public Cat(int Hunger ,int Health)
         {
-            HungerNeedFuel = X;
-            HealthMaintenanceCondition = Y;
+            HungerNeedFuel = Hunger;
+            HealthMaintenanceCondition = Health;
             Boredom = 9;
            
         }
+
        
         public void ExitProgram()
         {
@@ -128,9 +129,10 @@ namespace virtualPetShopB
 
         public virtual  void PlayWithCat()
         {
+            
+            OrganicCat Organ = new OrganicCat();
+            Organ.PlayWithCat();
 
-           
-            Boredom -= 3;
 
         }
 

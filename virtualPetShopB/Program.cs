@@ -105,7 +105,7 @@ namespace virtualPetShopB
                             break;
 
                         case "10":
-                       //     cat.EditInfo();
+                            shelter.AdoptCat();
                             break;
 
                         case "11":
