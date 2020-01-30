@@ -37,8 +37,11 @@ namespace virtualPetShopB
         public override void PlayWithCat()
         {
 
-            NeedsFuel = 5;
-            MaintenanceCondition = 1;
+            HungerNeedFuel += 1;
+            HealthMaintenanceCondition += 1;
+            Boredom -= 3;
+            Console.WriteLine("tttttttttttttttttttttttt");
+            CheckLevelsNumber();
 
 
             CheckLevelsNumber();

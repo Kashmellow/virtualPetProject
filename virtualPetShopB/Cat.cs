@@ -25,8 +25,6 @@ namespace virtualPetShopB
         public Cat()
         {
            
-            
-           
         }
 
         public Cat(int Hunger ,int Health)
@@ -130,8 +128,8 @@ namespace virtualPetShopB
         public virtual  void PlayWithCat()
         {
             
-            OrganicCat Organ = new OrganicCat();
-            Organ.PlayWithCat();
+            //OrganicCat Organ = new OrganicCat();
+            //Organ.PlayWithCat();
 
 
         }

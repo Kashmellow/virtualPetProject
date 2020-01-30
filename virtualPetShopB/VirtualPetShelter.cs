@@ -62,16 +62,16 @@ namespace virtualPetShopB
             for (int i = 0; i < myPets.Count; i++)
             {
 
-                Console.WriteLine("The Status levels between [1 to 9] \n");
+                Console.WriteLine("The status levels are between 1 (low) to 9 (high) \n");
 
                 Console.WriteLine("\n");
-                Console.WriteLine("The hunger level for " + " " + myPets[i].Name + " is " + myPets[i].HungerNeedFuel);
+                Console.WriteLine("The energy need for " + " " + myPets[i].Name + " is " + myPets[i].HungerNeedFuel);
 
                 Console.WriteLine("\n");
                 Console.WriteLine("The boredom level for " + " " + myPets[i].Name + " is " + myPets[i].Boredom);
 
                 Console.WriteLine("\n");
-               Console.WriteLine("The Health level for " + " " + myPets[i].Name + " is " + myPets[i].HealthMaintenanceCondition);
+               Console.WriteLine("The physical condition for " + " " + myPets[i].Name + " is " + myPets[i].HealthMaintenanceCondition);
             }
 
         }

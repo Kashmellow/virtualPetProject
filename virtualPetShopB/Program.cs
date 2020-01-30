@@ -31,8 +31,8 @@ namespace virtualPetShopB
                 do
                 {
                     Console.WriteLine("Main_Menu \n");
-                    Console.WriteLine("Press ( 0 ) if you would like to add Robtic cat");
-                    Console.WriteLine("Press ( 1 ) if you would like to add Organic cat");
+                    Console.WriteLine("Press ( 0 ) if you would like to add a robotic cat");
+                    Console.WriteLine("Press ( 1 ) if you would like to add an organic cat");
                     Console.WriteLine("Press ( 2 ) if you would like to view all cat info");
                     Console.WriteLine("Press ( 3 ) to play with all of the cats");
                     Console.WriteLine("Press ( 4 ) to play with a specific cat");
@@ -40,9 +40,9 @@ namespace virtualPetShopB
                     Console.WriteLine("Press ( 6 ) to feed one of the cats");
                     Console.WriteLine("Press ( 7 ) to take the all cats to doctor");
                     Console.WriteLine("Press ( 8 ) to take one cat to the doctor");
-                    Console.WriteLine("Press ( 9 ) to check the Status ");
-                    Console.WriteLine("Press ( 10 ) if you would like to edit the info  ");
-                    Console.WriteLine("Press ( 11 ) if you'd like to Exit ");
+                    Console.WriteLine("Press ( 9 ) to check the status ");
+                    Console.WriteLine("Press ( 10 ) if you would like to adopt a cat  ");
+                    Console.WriteLine("Press ( 11 ) if you'd like to exit ");
                     userChoice = Console.ReadLine();
 
                     switch(userChoice)
