@@ -47,34 +47,9 @@ namespace virtualPetShopB
             }
 
 
-
-          //  if (userOption ==1)
-          //  {
-          //      cat = new RoboticCat(5, 1);
-          //      cat.CreatePet();
-          //      shelter.myPets.Add(cat);
-
-                        //  }
-
-                        //else  if (userOption == 2)
-                        //  {
-                        //      cat = new OrganicCat(5, 1);
-                        //      cat.CreatePet();
-                        //      shelter.myPets.Add(cat);
-
-
-                        //  }
-
-                        //  else if (userOption == 3)
-                        //  cat.ExitProgram();
-
-
-            //        else
-            //{
+           
                 string userChoice = "0";
-                //// cat = cat.SelectCatType();
-                //cat.CreatePet();
-                //shelter.myPets.Add(cat);
+               
                     
                 do
                 {
@@ -95,7 +70,8 @@ namespace virtualPetShopB
                     Console.WriteLine("Press ( 10 ) to check the status ");
                     Console.WriteLine("Press ( 11 ) if you would like to adopt a cat  ");
                     Console.WriteLine("Press ( 12 ) if you'd like to exit ");
-                    userChoice = Console.ReadLine();
+                    Console.WriteLine("Press ( 13 ) to check the status with timer ");
+                userChoice = Console.ReadLine();
 
                     switch(userChoice)
                     {
@@ -155,7 +131,11 @@ namespace virtualPetShopB
                             cat.ExitProgram();
                             break;
 
-                        default:
+                    case "13":
+                        shelter.TimerRun();
+                        break;
+
+                    default:
                             break;
                     }
 
